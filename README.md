@@ -17,11 +17,10 @@
 9. [API Documentation](#api-documentation)
 10. [Monitoring and Analytics](#monitoring-and-analytics)
 11. [Security Features](#security-features)
-12. [Troubleshooting](#troubleshooting)
-13. [Contributing](#contributing)
-14. [Future Enhancements](#future-enhancements)
-15. [License](#license)
-16. [Support](#support)
+12. [Contributing](#contributing)
+13. [Future Enhancements](#future-enhancements)
+14. [License](#license)
+15. [Support](#support)
 
 ## Overview
 
@@ -75,17 +74,17 @@ InterXAI follows a **microservices-inspired, event-driven architecture** designe
 │  Backend Services (Django)                                  │
 │  ├── Authentication Service                                 │
 │  ├── Interview Orchestrator                                 │
-│  ├── Question Management                                     │
+│  ├── Question Management                                    │
 │  └── Analytics Engine                                       │
 ├─────────────────────────────────────────────────────────────┤
-│  AI Services (LangChain + Meta LLaMA)                      │
+│  AI Services (LangChain + Meta LLaMA)                       │
 │  ├── Response Evaluator                                     │
-│  ├── Question Generator                                      │
+│  ├── Question Generator                                     │
 │  └── Insight Extractor                                      │
 ├─────────────────────────────────────────────────────────────┤
-│  Data Layer                                                  │
+│  Data Layer                                                 │
 │  ├── PostgreSQL (Persistent Storage)                        │
-│  └── Redis (Caching & Task Queue)                          │
+│  └── Redis (Caching & Task Queue)                           │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -150,32 +149,7 @@ InterXAI follows a **microservices-inspired, event-driven architecture** designe
 
 ## Installation
 
-### Option 1: Docker Deployment (Recommended)
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourorg/interxai.git
-   cd interxai
-   ```
-
-2. **Environment Setup**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-
-3. **Build and Start Services**
-   ```bash
-   docker-compose up --build -d
-   ```
-
-4. **Initialize Database**
-   ```bash
-   docker-compose exec backend python manage.py migrate
-   docker-compose exec backend python manage.py createsuperuser
-   ```
-
-### Option 2: Manual Installation
+### Option 1: Manual Installation
 
 1. **Backend Setup**
    ```bash
@@ -290,18 +264,7 @@ EVALUATION_PROMPTS = {
 
 ### Company/Recruiter Workflow
 
-```mermaid
-graph TD
-    A[Company Login] --> B[Two-step Authentication]
-    B --> C[Home Dashboard]
-    C --> D[Create an Interview]
-    
-    D --> E[Create AI-powered Interview with Time Limit]
-    E --> F[Set Questions and Parameters]
-    F --> G[Get Ranked List of Candidates]
-    G --> H[Analyze Interview Results]
-    H --> I[Review Each Candidate]
-```
+<img width="858" height="152" alt="image" src="https://github.com/user-attachments/assets/202014c6-e126-4c05-87f2-4cd5db1428a9" />
 
 **Detailed Steps:**
 
@@ -337,24 +300,7 @@ graph TD
 
 ### Candidate/User Workflow
 
-```mermaid
-graph TD
-    A[User Login] --> B[2-Factor Authentication]
-    B --> C[Home Dashboard]
-    C --> D[Real Interview Simulator]
-    
-    D --> E[A Complete Speech-to-Speech Interview]
-    E --> F[Continuously Monitored for Confidence Level]
-    F --> G[Participate in Assessment Process]
-    G --> H[Have Your Interview Analyzed]
-    
-    C --> I[Mock Interview]
-    I --> J[Attend Mock Interview for Specific Job Role]
-    J --> K[Powered by Speech-to-Text]
-    K --> L[Get Response and Evaluation]
-    L --> M[Get Feedback on Performance]
-    M --> N[Enjoy Interview with No Time Limit]
-```
+<img width="881" height="224" alt="image" src="https://github.com/user-attachments/assets/8ea52ce5-adc5-4f72-980e-b8cddacd03c4" />
 
 **Detailed Steps:**
 
@@ -600,7 +546,6 @@ We welcome contributions to InterXAI! Please follow these guidelines:
    # Frontend
    npm install --include=dev
    ```
-
 
 ### Code Standards
 
