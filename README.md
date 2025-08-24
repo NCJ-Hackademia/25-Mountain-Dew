@@ -468,27 +468,6 @@ class TokenAuthenticationMiddleware:
         return response
 ```
 
-### Real-time Communication
-
-```javascript
-// WebSocket connection with token authentication
-const token = localStorage.getItem('access_token');
-const ws = new WebSocket(`ws://localhost:8000/ws/interview/?token=${token}`);
-
-ws.onmessage = function(event) {
-    const data = JSON.parse(event.data);
-    handleRealtimeUpdate(data);
-};
-
-// Send authenticated violation report
-ws.send(JSON.stringify({
-    'type': 'violation',
-    'violation_type': 'multiple_faces',
-    'timestamp': new Date().toISOString(),
-    'token': token
-}));
-```
-
 ## Monitoring and Analytics
 
 ### Real-time Monitoring Features
@@ -576,78 +555,6 @@ SECURITY_SETTINGS = {
 }
 ```
 
-## Troubleshooting
-
-### Common Issues and Solutions
-
-#### 1. Camera/Microphone Access Issues
-```bash
-# Check browser permissions
-# Chrome: chrome://settings/content/camera
-# Firefox: about:preferences#privacy
-
-# For HTTPS requirement in production
-# Ensure SSL certificate is properly configured
-```
-
-#### 2. AI Model Loading Problems
-```bash
-# Check model path and permissions
-ls -la /path/to/llama/model/
-
-# Verify GPU availability (if using GPU)
-nvidia-smi
-
-# Check memory usage
-free -h
-```
-
-#### 3. WebSocket Connection Issues
-```bash
-# Check Django Channels configuration
-# Verify Redis connection
-redis-cli ping
-
-# Check firewall settings
-sudo ufw status
-```
-
-#### 4. Database Connection Problems
-```bash
-# PostgreSQL connection test
-psql -h localhost -U interxai_user -d interxai_db
-
-# Check database permissions
-GRANT ALL PRIVILEGES ON DATABASE interxai_db TO interxai_user;
-```
-
-### Performance Optimization
-
-1. **Database Optimization**
-   ```sql
-   -- Create indexes for frequently queried fields
-   CREATE INDEX idx_interview_candidate ON interviews(candidate_id);
-   CREATE INDEX idx_response_timestamp ON responses(created_at);
-   ```
-
-2. **Redis Configuration**
-   ```bash
-   # Optimize Redis for high-throughput
-   redis-cli CONFIG SET maxmemory-policy allkeys-lru
-   redis-cli CONFIG SET maxmemory 2gb
-   ```
-
-3. **Frontend Performance**
-   ```javascript
-   // Implement lazy loading for components
-   const InterviewDashboard = React.lazy(() => import('./InterviewDashboard'));
-   
-   // Use React.memo for expensive components
-   const CandidateList = React.memo(({ candidates }) => {
-       // Component implementation
-   });
-   ```
-
 ### Logging and Debugging
 
 ```python
@@ -681,31 +588,20 @@ We welcome contributions to InterXAI! Please follow these guidelines:
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/yourusername/interxai.git
-   cd interxai
-   git checkout -b feature/your-feature-name
+   git clone https://github.com/NCJ-Hackademia/25-Mountain-Dew
+   cd 25-Mountain-Dew
    ```
 
 2. **Install Development Dependencies**
    ```bash
    # Backend
+   cd core
    pip install -r requirements-dev.txt
    
    # Frontend
    npm install --include=dev
    ```
 
-3. **Run Tests**
-   ```bash
-   # Backend tests
-   python manage.py test
-   
-   # Frontend tests
-   npm test
-   
-   # Integration tests
-   docker-compose -f docker-compose.test.yml up --abort-on-container-exit
-   ```
 
 ### Code Standards
 
@@ -758,7 +654,7 @@ InterXAI is licensed under the MIT License. See the [LICENSE](LICENSE) file for 
 ```text
 MIT License
 
-Copyright (c) 2024 InterXAI Team
+Copyright (c) 2025 InterXAI Team
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
