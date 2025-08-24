@@ -123,8 +123,7 @@ InterXAI follows a **microservices-inspired, event-driven architecture** designe
 | **Database** | PostgreSQL 14+ | Persistent data storage |
 | **Cache/Queue** | Redis 7+ | Caching and async task processing |
 | **AI Engine** | LangChain + Meta LLaMA | AI-powered interview intelligence |
-| **WebSockets** | Django Channels | Real-time communication |
-| **Authentication** | JWT + Django REST Auth | Secure user authentication |
+| **Authentication** | Django REST Auth | Secure user authentication |
 | **Deployment** | Docker + Kubernetes | Containerized deployment |
 | **Monitoring** | Prometheus + Grafana | System monitoring and metrics |
 
